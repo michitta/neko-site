@@ -30,7 +30,7 @@
       }
     }
 
-    > button {
+    > a {
       @apply flex gap-[6px] px-[12px] py-[14px] dark:text-white text-black font-semibold text-[14px] leading-[10px] dark:bg-background-1-t bg-background-1-t-w border dark:border-label-5 border-label-5-w rounded-[16px];
 
       > svg {

@@ -16,9 +16,9 @@ const Header: FC = memo(() => {
                 </div>
             </div>
             <div className={styles.right_section}>
-                <button className={location.pathname === '/' ? styles.active : ''} onClick={() => navigator('https://discord.gg/AjRCWhkxdA')}>Discord</button>
+                <a href="https://discord.gg/AjRCWhkxdA" className={location.pathname === '/' ? styles.active : ''}>Discord</a>
             </div>
-        </header>
+        </header >
     )
 });
 

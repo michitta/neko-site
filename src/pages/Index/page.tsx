@@ -1,25 +1,23 @@
 import styles from './page.module.scss';
 import main_image from "@/shared/assets/main.png";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 export default function Index() {
-  const router = useNavigate();
+  const [tag, set_tag] = useState('...');
+  const [url, set_url] = useState('#');
 
-  const [tag, setTag] = useState('...');
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    if (userAgent.includes("Win")) set_url('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.exe');
+    else if (userAgent.includes("Mac")) set_url('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.dmg');
+    else if (userAgent.includes("Linux")) set_url('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.AppImage');
+  }, [])
 
   useEffect(() => {
     const latest_version = fetch('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest');
-    latest_version.then(res => res.json()).then(data => setTag('Версия ' + data?.tag_name + ' уже доступна'));
+    latest_version.then(res => res.json()).then(data => set_tag('Версия ' + data?.tag_name + ' уже доступна'));
   }, [])
-
-  const downloadLauncher = () => {
-    const userAgent = navigator.userAgent;
-    if (userAgent.includes("Win")) router('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.exe');
-    else if (userAgent.includes("Mac")) router('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.dmg');
-    else if (userAgent.includes("Linux")) router('https://github.com/michitta/updates-neko-launcher-yami/releases/latest/download/yami-launcher.AppImage');
-  }
 
   return (
     <motion.main
@@ -39,9 +37,9 @@ export default function Index() {
           </h1>
           <p>Один лаунчер - все сервера Neko</p>
         </div>
-        <button onClick={() => downloadLauncher()}>
+        <a href={url}>
           Скачать (с привязкой к yami)
-        </button>
+        </a>
         <img src={main_image} width={800} height={254} alt="launcher_image" />
       </section>
       <section className={styles.bento}>

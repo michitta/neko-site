@@ -24,7 +24,7 @@ export default function Developers() {
                     </section>
                     <section className={styles.right_section}>
                         <a href='https://raw.githubusercontent.com/michitta/neko-manifest-cli/main/a12719b1-f183-493f-95e9-6545b349dc98.json'>Пример манифеста</a>
-                        <a href="https://github.com/michitta/neko-manifest-creator">Исходный код</a>
+                        <a href="https://github.com/michitta/neko-manifest-creator">GitHub</a>
                     </section>
                 </div>
             </div>
