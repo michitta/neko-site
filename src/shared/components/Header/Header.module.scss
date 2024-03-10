@@ -1,0 +1,19 @@
+header {
+  @apply w-full dark:bg-background-2-t bg-background-2-t-w flex justify-between pl-[18px] pr-[10px] py-[12px] rounded-t-[14px] border dark:border-label-5 border-label-5-w;
+
+  .left_section {
+    @apply flex items-center gap-[12px];
+
+    .active_panel {
+      @apply flex gap-[2px];
+    }
+
+    > p {
+      @apply dark:text-white text-black text-[16px] font-bold;
+    }
+  }
+
+  .right_section {
+    @apply flex items-center gap-[10px];
+  }
+}
