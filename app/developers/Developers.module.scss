@@ -1,5 +1,5 @@
 .page {
-  @apply flex h-full flex-col gap-[100px] items-center py-[40px];
+  @apply h-full flex flex-col gap-[100px] items-center py-[40px];
 
   .text {
     @apply text-center flex flex-col gap-[10px];

@@ -1,5 +1,5 @@
 .page {
-  @apply flex h-full flex-col gap-[100px] items-center py-[40px];
+  @apply h-fit flex flex-col gap-[100px] items-center py-[40px];
 
   .info {
     @apply flex flex-col gap-[40px] items-center;
@@ -27,11 +27,11 @@
         @apply w-fit flex gap-[6px] px-[12px] py-[14px] bg-background-0-t border border-label-5 rounded-[16px] text-white text-[14px] font-semibold leading-[10px];
 
         &:hover {
-          @apply text-white border-label-4;
+          @apply text-white border-label-4 bg-background-2-t;
         }
 
         &:active {
-          @apply border-white;
+          @apply border-white bg-background-3-t;
         }
       }
 
