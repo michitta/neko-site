@@ -3,11 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   darkMode: "media",
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{html,js,tsx,scss}"],
   theme: {
     extend: {
       fontFamily: {
@@ -44,16 +40,22 @@ export default {
           "5-w": "#30303033",
         },
         indigo: {
-          default: "#3d3d99",
-          t: "#5151cc",
+          default: "#B8B8E5",
+          hover: "#CCCCFF",
+          true: "#7B79FF",
         },
         red: {
-          default: "#991f1f",
-          t: "#cc2929",
+          default: "#E5B8B8",
+          hover: "#FFCCCC",
+          true: "#EE5E52",
         },
         green: {
-          default: "#1f9947",
-          t: "#29cc5f",
+          default: "#CFE5DE",
+          hover: "#E6FFF7",
+          true: "#5CB176",
+        },
+        purple: {
+          default: "#D7B8E5",
         },
       },
       borderRadius: {

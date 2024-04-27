@@ -1,0 +1,79 @@
+.page {
+  @apply flex h-full flex-col gap-[100px] items-center py-[40px];
+
+  .info {
+    @apply flex flex-col gap-[40px] items-center;
+
+    > img {
+      @apply rounded-[20px];
+    }
+
+    .version {
+      @apply bg-background-2-t border border-label-5 px-[12px] py-[10px] rounded-[14px];
+
+      > p {
+        @apply text-label-2 font-medium;
+      }
+    }
+
+    > h1 {
+      @apply text-white font-bold text-[40px] text-center;
+    }
+
+    .download {
+      @apply flex flex-col gap-[20px] items-center;
+
+      .button {
+        @apply w-fit flex gap-[6px] px-[12px] py-[14px] bg-background-0-t border border-label-5 rounded-[16px] text-white text-[14px] font-semibold leading-[10px];
+
+        &:hover {
+          @apply text-white border-label-4;
+        }
+
+        &:active {
+          @apply border-white;
+        }
+      }
+
+      > a {
+        @apply text-indigo-default transition-colors;
+
+        &:hover {
+          @apply text-indigo-hover;
+        }
+      }
+    }
+  }
+
+  .features {
+    @apply lg:flex-row flex flex-col gap-[80px];
+
+    > div {
+      @apply flex flex-col gap-[40px];
+
+      > img {
+        @apply rounded-[12px];
+      }
+    }
+  }
+
+  .text {
+    @apply max-lg:text-center flex flex-col gap-[10px];
+
+    > h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-white font-bold text-[32px];
+    }
+
+    > p {
+      @apply text-label-2 font-medium text-[20px];
+    }
+  }
+
+  .center {
+    @apply text-center;
+  }
+}
