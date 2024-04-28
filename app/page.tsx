@@ -22,7 +22,7 @@ export default async function Home() {
         <h1>Раскройте свой потенциал:<br />
           мощь, стиль и инновации в одном лаунчере</h1>
         <div className={styles.buttons}>
-          <Button href="/api/downloads" className="download"><RiArrowDownCircleFill />Скачать лаунчер</Button>
+          <Button href="/api/downloads" className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>
           <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
         </div>
         <Image src={Main} alt="Neko Launcher" width={800} height={540} />
@@ -114,7 +114,7 @@ export default async function Home() {
           <h2>Инструмент для разработчиков</h2>
           <p>Скачайте Manifest Creator для создания манифестов в пару кликов</p>
         </div>
-        <Button href="https://github.com/michitta/neko-manifest-creator"><RiArrowDownCircleFill />Скачать инструмент</Button>
+        <Button href="https://github.com/michitta/neko-manifest-creator"><RiArrowDownCircleFill size={20} />Скачать инструмент</Button>
       </div>
     </main >
   );
