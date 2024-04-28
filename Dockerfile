@@ -1,4 +1,4 @@
-FROM imbios/bun-node:latest-current-alpine
+FROM oven/bun:alpine
 WORKDIR /app
 COPY . /app
 RUN bun i
