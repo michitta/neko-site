@@ -4,4 +4,4 @@ COPY . /app
 RUN bun i
 RUN bun run build
 EXPOSE 3001
-CMD ["bun", "start"]
+CMD ["bun", "start", "-p", "3001"]
