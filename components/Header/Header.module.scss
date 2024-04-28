@@ -1,19 +1,11 @@
 .header {
-  @apply sm:flex-row max-sm:gap-[10px] flex flex-col items-center justify-between py-[10px];
-
-  a {
-    @apply text-label-2 font-bold text-[14px] transition-colors;
-
-    &:hover {
-      @apply text-white;
-    }
-  }
+  @apply flex items-center justify-between py-[10px] px-[20px];
 
   .leftSection {
-    @apply sm:flex-row flex flex-col sm:gap-[20px] gap-[10px] items-center;
+    @apply flex gap-[10px] items-center;
 
     > p {
-      @apply text-white font-bold text-[20px];
+      @apply dark:text-white text-black font-bold text-[20px];
     }
 
     .navBar {
@@ -26,6 +18,10 @@
   }
 
   .rightSection {
-    @apply flex gap-[20px] items-center;
+    @apply flex gap-[12px] items-center;
+
+    > a {
+      @apply bg-none;
+    }
   }
 }

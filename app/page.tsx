@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.scss"
-import Link from "next/link";
 import MainGif from "@/assets/main.gif"
 import FirstGif from "@/assets/firstGif.gif"
 import SecondGif from "@/assets/secondGif.gif"
@@ -8,24 +7,23 @@ import ThirdGif from "@/assets/thirdGif.gif"
 import FourthGif from "@/assets/fourthGif.gif"
 import clsx from "clsx";
 import axios from "axios";
-import GoSvg from "@/assets/go.svg";
+import Button from "@/components/Button/Button.component";
+import { RiArrowDownCircleFill } from "@remixicon/react";
+
 export default async function Home() {
   const version = await axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then((res) => res?.data?.tag_name).catch(() => '?');
 
   return (
     <main className={styles.page}>
-      <div className={styles.info}>
+      <div className={styles.present}>
         <div className={styles.version}>
           <p>Версия {version} уже доступна</p>
         </div>
         <h1>Раскройте свой потенциал:<br />
           мощь, стиль и инновации в одном лаунчере</h1>
-        <div className={styles.download}>
-          <Link className={styles.button} href="/api/downloads">
-            <Image unoptimized={true} src={GoSvg} alt="svg" width={11} height={11} />
-            Скачать
-          </Link>
-          <Link href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Link>
+        <div className={styles.buttons}>
+          <Button href="/api/downloads" className="download"><RiArrowDownCircleFill />Скачать лаунчер</Button>
+          <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
         </div>
         <Image unoptimized={true} src={MainGif} alt="Neko Launcher" width={800} height={540} />
       </div>
@@ -66,37 +64,58 @@ export default async function Home() {
         </div>
       </div>
       <div className={clsx(styles.text, styles.center)}>
-        <h2>И ещё чуть-чуть информации</h2>
-        <p>Часть информация, которая действительно нужна</p>
+        <h2>И это ещё не всё!</h2>
+        <p>Фишки ниже</p>
       </div>
       <div className={styles.features}>
         <div>
           <div className={styles.text}>
             <h2>Встроенный магазин</h2>
-            <p>В лаунчере встроен маркет, где вы можете легко<br />
-              найти и приобрести нужные дополнения прямо<br />
-              из интерфейса.</p>
+            <p>В лаунчере встроен маркет, где вы<br />
+              можете легко найти и приобрести нужные<br />
+              дополнения прямо из интерфейса.</p>
           </div>
           <div className={styles.text}>
             <h2>Совместимость</h2>
-            <p>Поддерживает Windows (x64), Linux (x64) и<br />
-              macOS (x64, ARM64).</p>
+            <p>Поддерживает Windows 10+ (x64), Linux<br />
+              (x64) и macOS (x64, ARM64 - beta).</p>
+          </div>
+          <div className={styles.text}>
+            <h2>Быстрый вход на сервер</h2>
+            <p>Лаунчер автоматически передаст данные<br />
+              о сервере в игру, что позволит вам<br />
+              мгновенно попасть на сервер после<br />
+              запуска, избегая лишних действий.</p>
           </div>
         </div>
         <div>
           <div className={styles.text}>
             <h2>Единая система Neko</h2>
-            <p>Сервера проектов, которые используют этот<br />
-              лаунчер, могут быть добавлены в любую из<br />
-              ревизий лаунчера.</p>
+            <p>Сервера проектов, которые используют<br />
+              этот лаунчер, могут быть добавлены в<br />
+              любую из ревизий лаунчера.</p>
           </div>
           <div className={styles.text}>
             <h2>Интуитивный дизайн</h2>
-            <p>Самый удобный и функциональный дизайн из<br />
-              всех, что мы когда-либо создавали.</p>
+            <p>Самый удобный и функциональный<br />
+              дизайн из всех, что мы когда-либо<br />
+              создавали.</p>
+          </div>
+          <div className={styles.text}>
+            <h2>HD скины и плащи</h2>
+            <p>Возможность загрузки HD скинов и<br />
+              плащей, которые выделят вас на фоне<br />
+              остальных.</p>
           </div>
         </div>
       </div>
-    </main>
+      <div className={styles.developers}>
+        <div className={clsx(styles.text, styles.center)}>
+          <h2>Инструмент для разработчиков</h2>
+          <p>Скачайте Manifest Creator для создания манифестов в пару кликов</p>
+        </div>
+        <Button href="https://github.com/michitta/neko-manifest-creator"><RiArrowDownCircleFill />Скачать инструмент</Button>
+      </div>
+    </main >
   );
 }

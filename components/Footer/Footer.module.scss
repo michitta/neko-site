@@ -1,8 +1,8 @@
 .footer {
-  @apply lg:flex-row max-lg:gap-[10px] flex flex-col items-center justify-between py-[10px];
+  @apply flex items-center justify-between py-[20px];
 
   > a,
   p {
-    @apply text-white font-bold text-[16px];
+    @apply dark:text-white text-black font-bold text-[16px];
   }
 }
