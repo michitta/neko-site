@@ -1,8 +1,19 @@
 .footer {
-  @apply flex items-center justify-between py-[20px] px-[20px];
+  @apply flex sm:flex-row flex-col items-center justify-between py-[20px] px-[20px];
 
-  > a,
-  p {
+  > a {
+    @apply text-indigo-default underline font-bold text-[16px];
+
+    &:hover {
+      @apply text-indigo-hover;
+    }
+
+    &:active {
+      @apply text-indigo-true;
+    }
+  }
+
+  > p {
     @apply dark:text-white text-black font-bold text-[16px];
   }
 }
