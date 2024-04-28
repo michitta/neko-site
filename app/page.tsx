@@ -1,9 +1,4 @@
-import Image from "next/image";
 import styles from "./page.module.scss"
-import Main from "@/assets/main.webp"
-import Second from "@/assets/second.webp"
-import Third from "@/assets/third.webp"
-import Fourth from "@/assets/fourth.webp"
 import clsx from "clsx";
 import axios from "axios";
 import Button from "@/components/Button/Button.component";
@@ -11,6 +6,7 @@ import { RiArrowDownCircleFill } from "@remixicon/react";
 
 export default async function Home() {
   const version = await axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then((res) => res?.data?.tag_name).catch(() => '?');
+  const downloadUrl = 'https://api.yami.town/api/v1/downloads/launcher/' + version;
 
   return (
     <main className={styles.page}>
@@ -21,7 +17,7 @@ export default async function Home() {
         <h1>Раскройте свой потенциал:<br />
           мощь, стиль и инновации в одном лаунчере</h1>
         <div className={styles.buttons}>
-          <Button href="/api/downloads" className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>
+          <Button href={downloadUrl} className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>
           <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
         </div>
         <video autoPlay loop muted playsInline src="main.webm" />
