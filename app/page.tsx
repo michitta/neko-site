@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.scss"
-import MainGif from "@/assets/main.gif"
-import FirstGif from "@/assets/firstGif.gif"
-import SecondGif from "@/assets/secondGif.gif"
-import ThirdGif from "@/assets/thirdGif.gif"
-import FourthGif from "@/assets/fourthGif.gif"
+import Main from "@/assets/main.webp"
+import First from "@/assets/first.webp"
+import Second from "@/assets/second.webp"
+import Third from "@/assets/third.webp"
+import Fourth from "@/assets/fourth.webp"
 import clsx from "clsx";
 import axios from "axios";
 import Button from "@/components/Button/Button.component";
@@ -25,7 +25,7 @@ export default async function Home() {
           <Button href="/api/downloads" className="download"><RiArrowDownCircleFill />Скачать лаунчер</Button>
           <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
         </div>
-        <Image unoptimized={true} src={MainGif} alt="Neko Launcher" width={800} height={540} />
+        <Image src={Main} alt="Neko Launcher" width={800} height={540} />
       </div>
       <div className={styles.features}>
         <div>
@@ -34,7 +34,7 @@ export default async function Home() {
             <p>Разработан на Rust и TypeScript, обеспечивает<br />
               отличную скорость и стабильность.</p>
           </div>
-          <Image unoptimized={true} src={FirstGif} alt="gif-1" width={480} height={324} />
+          <Image src={First} alt="gif-1" width={480} height={324} />
         </div>
         <div>
           <div className={styles.text}>
@@ -42,7 +42,7 @@ export default async function Home() {
             <p>Вы можете изменить цветовую схему и фоновое<br />
               изображение для персонализации.</p>
           </div>
-          <Image unoptimized={true} src={SecondGif} alt="gif-2" width={480} height={324} />
+          <Image src={Second} alt="gif-2" width={480} height={324} />
         </div>
       </div>
       <div className={styles.features}>
@@ -52,7 +52,7 @@ export default async function Home() {
             <p>Работает без необходимости установки<br />
               дополнительных пакетов.</p>
           </div>
-          <Image unoptimized={true} src={ThirdGif} alt="gif-3" width={480} height={324} />
+          <Image src={Third} alt="gif-3" width={480} height={324} />
         </div>
         <div>
           <div className={styles.text}>
@@ -60,7 +60,7 @@ export default async function Home() {
             <p>Занимает менее 10 МБ, что экономит место<br />
               на вашем устройстве.</p>
           </div>
-          <Image unoptimized={true} src={FourthGif} alt="gif-4" width={480} height={324} />
+          <Image src={Fourth} alt="gif-4" width={480} height={324} />
         </div>
       </div>
       <div className={clsx(styles.text, styles.center)}>
