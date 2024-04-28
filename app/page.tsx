@@ -9,7 +9,6 @@ import FourthGif from "@/assets/fourthGif.gif"
 import clsx from "clsx";
 import axios from "axios";
 import GoSvg from "@/assets/go.svg";
-
 export default async function Home() {
   const version = await axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then((res) => res?.data?.tag_name).catch(() => '?');
 
@@ -28,7 +27,7 @@ export default async function Home() {
           </Link>
           <Link href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Link>
         </div>
-        <Image src={MainGif} alt="Neko Launcher" width={800} height={540} />
+        <Image unoptimized={true} src={MainGif} alt="Neko Launcher" width={800} height={540} />
       </div>
       <div className={styles.features}>
         <div>
