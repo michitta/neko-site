@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.scss"
 import Main from "@/assets/main.webp"
-import First from "@/assets/first.webp"
 import Second from "@/assets/second.webp"
 import Third from "@/assets/third.webp"
 import Fourth from "@/assets/fourth.webp"
@@ -25,7 +24,7 @@ export default async function Home() {
           <Button href="/api/downloads" className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>
           <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
         </div>
-        <Image src={Main} alt="Neko Launcher" width={800} height={540} />
+        <video autoPlay loop muted playsInline src="main.webm" />
       </div>
       <div className={styles.features}>
         <div>
@@ -34,7 +33,7 @@ export default async function Home() {
             <p>Разработан на Rust и TypeScript, обеспечивает<br />
               отличную скорость и стабильность.</p>
           </div>
-          <Image src={First} alt="gif-1" width={480} height={324} />
+          <video autoPlay loop muted playsInline src="first.webm" />
         </div>
         <div>
           <div className={styles.text}>
@@ -42,7 +41,7 @@ export default async function Home() {
             <p>Вы можете изменить цветовую схему и фоновое<br />
               изображение для персонализации.</p>
           </div>
-          <Image src={Second} alt="gif-2" width={480} height={324} />
+          <video autoPlay loop muted playsInline src="second.webm" />
         </div>
       </div>
       <div className={styles.features}>
@@ -52,7 +51,7 @@ export default async function Home() {
             <p>Работает без необходимости установки<br />
               дополнительных пакетов.</p>
           </div>
-          <Image src={Third} alt="gif-3" width={480} height={324} />
+          <video autoPlay loop muted playsInline src="third.webm" />
         </div>
         <div>
           <div className={styles.text}>
@@ -60,7 +59,7 @@ export default async function Home() {
             <p>Занимает менее 10 МБ, что экономит место<br />
               на вашем устройстве.</p>
           </div>
-          <Image src={Fourth} alt="gif-4" width={480} height={324} />
+          <video autoPlay loop muted playsInline src="four.webm" />
         </div>
       </div>
       <div className={clsx(styles.text, styles.center)}>
