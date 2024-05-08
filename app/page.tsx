@@ -1,27 +1,35 @@
+'use client';
+
 import styles from "./page.module.scss"
 import clsx from "clsx";
-import axios from "axios";
 import Button from "@/components/Button/Button.component";
 import { RiArrowDownCircleFill } from "@remixicon/react";
 import Header from "@/components/Header/Header.component";
 import Footer from "@/components/Footer/Footer.component";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default async function Home() {
-  const version = await axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then((res) => res?.data?.tag_name).catch(() => '?');
-  const downloadUrl = 'https://api.yami.town/api/v1/downloads/launcher/' + version;
+export default function Home() {
+  const [version, setVersion] = useState();
+
+  const downloadUrl = version ? "https://api.yami.town/api/v1/downloads/launcher/" + version : "";
+
+  useEffect(() => {
+    axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then(res => setVersion(res.data.tag_name))
+  }, [])
 
   return (
     <>
-      <Header />
+      <Header version={version} downloadUrl={downloadUrl} />
       <main className={styles.page}>
         <div className={styles.present}>
-          <div className={styles.version}>
+          {version && <div className={styles.version}>
             <p>Версия {version} уже доступна</p>
-          </div>
+          </div>}
           <h1>Раскройте свой потенциал:<br />
             мощь, стиль и инновации в одном лаунчере</h1>
           <div className={styles.buttons}>
-            <Button href={downloadUrl} className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>
+            {version && <Button href={downloadUrl} className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>}
             <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
           </div>
           <video autoPlay loop muted playsInline src="main.webm" />

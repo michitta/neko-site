@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 
-export default async function () {
+export default function () {
     const navigator = useRouter();
     useEffect(() => {
         navigator.push('/');

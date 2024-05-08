@@ -1,16 +1,16 @@
 .button {
-  @apply w-fit items-center flex gap-[6px] px-[12px] py-[9px] dark:bg-background-2-t bg-background-2-t-w border dark:border-label-5 border-label-5-w rounded-[16px] dark:text-white text-black text-[14px] font-semibold backdrop-blur-2xl transition-all;
+  @apply w-fit items-center flex gap-[6px] px-[12px] py-[9px] dark:bg-background-1-t bg-background-1-t-w border dark:border-label-5 border-label-5-w rounded-[16px] dark:text-white text-black text-[14px] font-semibold backdrop-blur-2xl transition-all;
 
   > svg {
     @apply dark:fill-white fill-black;
   }
 
   &:hover {
-    @apply dark:bg-background-1-t bg-background-1-t-w dark:border-label-3 border-label-3-w;
+    @apply dark:bg-background-2-t bg-background-2-t-w dark:border-label-4 border-label-4-w;
   }
 
   &:active {
-    @apply dark:bg-background-0-t bg-background-0-t-w dark:border-white border-label-1-w;
+    @apply dark:bg-background-3-t bg-background-3-t-w dark:border-label-2 border-label-2-w;
   }
 }
 
@@ -22,11 +22,11 @@
   }
 
   &:hover {
-    @apply dark:bg-background-1-t bg-background-1-t-w dark:border-label-3 border-label-3-w;
+    @apply dark:bg-background-2-t bg-background-2-t-w dark:border-label-4 border-label-4-w;
   }
 
   &:active {
-    @apply dark:bg-background-0-t bg-background-0-t-w dark:border-white border-label-1-w;
+    @apply dark:bg-background-3-t bg-background-3-t-w dark:border-label-2 border-label-2-w;
   }
 }
 
@@ -38,12 +38,12 @@
   }
 
   &:hover {
-    @apply bg-green-hover dark:border-label-3 border-label-3-w;
+    @apply bg-green-hover dark:border-label-4 border-label-4-w;
     box-shadow: 0px 0px 40px 0px rgba(230, 255, 247, 0.6);
   }
 
   &:active {
-    @apply bg-green-hover dark:border-white border-label-1-w;
+    @apply bg-green-hover dark:border-label-2 border-label-2-w;
     box-shadow: 0px 0px 40px 0px rgba(230, 255, 247, 0.6);
   }
 }
