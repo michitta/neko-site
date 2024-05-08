@@ -4,7 +4,7 @@ import { RiArrowDownCircleFill } from "@remixicon/react";
 import Image from "next/image";
 import Logo from "@/assets/logo.webp";
 
-export default function ({ version, downloadUrl }: { version?: string, downloadUrl: string }) {
+export default function Header({ version, downloadUrl }: { version?: string, downloadUrl: string }) {
     return (
         <header className={styles.header}>
             <div className={styles.leftSection}>
