@@ -1,8 +1,9 @@
 services:
   neko-site:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: registry.yami.town/neko-site/neko-site:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     working_dir: /app
     ports:
       - "127.0.0.1:3001:3000"
