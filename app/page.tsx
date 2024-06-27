@@ -12,7 +12,7 @@ import axios from "axios";
 export default function Home() {
   const [version, setVersion] = useState();
 
-  const downloadUrl = version ? "https://api.yami.town/api/v1/downloads/launcher/" + version : "";
+  const downloadUrl = "https://api.yami.town/api/v1/downloads/launcher/yami";
 
   useEffect(() => {
     axios.get('https://api.github.com/repos/michitta/neko-launcher-updates/releases/latest').then(res => setVersion(res.data.tag_name))
