@@ -15,7 +15,7 @@ export default function Home() {
   const downloadUrl = version ? "https://api.yami.town/api/v1/downloads/launcher/" + version : "";
 
   useEffect(() => {
-    axios.get('https://api.github.com/repos/michitta/updates-neko-launcher-yami/releases/latest').then(res => setVersion(res.data.tag_name))
+    axios.get('https://api.github.com/repos/michitta/neko-launcher-updates/releases/latest').then(res => setVersion(res.data.tag_name))
   }, [])
 
   return (
@@ -29,8 +29,8 @@ export default function Home() {
           <h1>Раскройте свой потенциал:<br />
             мощь, стиль и инновации в одном лаунчере</h1>
           <div className={styles.buttons}>
-            {version && <Button href={downloadUrl} className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер</Button>}
-            <Button href="https://github.com/michitta/updates-neko-launcher-yami/releases/latest">Список изменений</Button>
+            {version && <Button href={downloadUrl} className="download"><RiArrowDownCircleFill size={20} />Скачать лаунчер (yami)</Button>}
+            <Button href="https://github.com/michitta/neko-launcher-updates/releases/latest">Список изменений</Button>
           </div>
           <video autoPlay loop muted playsInline src="main.webm" />
         </div>
